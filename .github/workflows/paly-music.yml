@@ -14,19 +14,26 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
 
-      - name: Set up Python
-        uses: actions/setup-python@v2
+      - name: Set up Node.js
+        uses: actions/setup-node@v2
         with:
-          python-version: 3.x
+          node-version: '14'
 
       - name: Install dependencies
-        run: pip install -r requirements.txt
+        run: npm install
 
       - name: Play Music
         run: |
-          # Your music playback command goes here
-          # Replace this line with the appropriate command to play music
-          # For example, you can use a command-line music player like 'mpg123' or 'vlc'
-          # Make sure to specify the path to your music file or playlist
-          mpg123 /path/to/music/file.mp3
+         const play = require('play-sound')(opts = {});
+
+
+const musicFile = '/music.mp3';
+
+play.play(musicFile, function (err) {
+  if (err) {
+    console.error('Error playing music:', err);
+  } else {
+    console.log('Music playback completed');
+  }
+});
 
