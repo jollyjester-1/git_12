@@ -1,0 +1,31 @@
+name: Play Music on PR
+
+on:
+  pull_request:
+    types:
+      - opened
+      - synchronize
+
+jobs:
+  play-music:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: 3.x
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Play Music
+        run: |
+          # Your music playback command goes here
+          # Replace this line with the appropriate command to play music
+          # For example, you can use a command-line music player like 'mpg123' or 'vlc'
+          # Make sure to specify the path to your music file or playlist
+          mpg123 /path/to/music/file.mp3
