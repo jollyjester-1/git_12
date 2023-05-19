@@ -1,4 +1,4 @@
-name: Play Music on PR
+name: Play Music on Pull Request
 
 on:
   pull_request:
@@ -7,33 +7,15 @@ on:
       - synchronize
 
 jobs:
-  play-music:
+  play_music:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v2
-
-      - name: Set up Node.js
-        uses: actions/setup-node@v2
-        with:
-          node-version: '14'
-
-      - name: Install dependencies
-        run: npm install
+      - name: Checkout repository
+        uses: actions/checkout@v3
 
       - name: Play Music
         run: |
-         const play = require('play-sound')(opts = {});
-
-
-const musicFile = '/music.mp3';
-
-play.play(musicFile, function (err) {
-  if (err) {
-    console.error('Error playing music:', err);
-  } else {
-    console.log('Music playback completed');
-  }
-});
-
+          sudo apt-get update
+          sudo apt-get install -y mpg123
+          mpg123 your-music-file.mp3
