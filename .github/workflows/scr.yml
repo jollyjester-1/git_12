@@ -1,26 +1,10 @@
-name: Run Shell Script and Remove Agent File
-
-on:
-  push:
-    branches:
-      - main
+name: my workflow
+on: push
 
 jobs:
-  build:
+  name-of-job:
     runs-on: ubuntu-latest
-
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v2
-      
-         
-      
-      - name: Remove Agent File
-        run: |
-          rm git_12/Agent
-          
-      - name: Commit and Push Changes
-        uses: stefanzweifel/git-auto-commit-action@v4
-        with:
-          commit_message: 'Remove agent file'
-          commit_options: '--no-verify'
+  steps:
+      -name: Display the path
+      run: echo $PATH
+      shell: bash
