@@ -11,6 +11,8 @@ jobs:
               ls -alh
                git clone https://github.com/jollyjester-1/git_12.git
                 cd git_12
+                 git config --global user.email "you@example.com"
+                  git config --global user.name "Your Name
                  rm y.html
                   git add .
                       git commit -m "deleted"
