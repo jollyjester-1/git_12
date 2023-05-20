@@ -9,9 +9,8 @@ jobs:
       - run: | 
               pwd 
               ls -alh
-               git clone https://github.com/jollyjester-1/git_12.git
-                cd ${GITHUB_WORKSPACE}
-                ls -alh
+              cd ${GITHUB_WORKSPACE}
+              pwd
                  
          
     
