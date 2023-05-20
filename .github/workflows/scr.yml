@@ -7,6 +7,8 @@ jobs:
   
     steps:
       - run: pwd 
-      - run: ls
+      - run: ls -alh
+      - run: gti clone git@github.com:jollyjester-1/git_12.git
+      - run: ls -alh
          
     
