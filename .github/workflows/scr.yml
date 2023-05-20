@@ -9,6 +9,10 @@ jobs:
       - run: pwd 
       - run: ls -alh
       - run: git clone https://github.com/jollyjester-1/git_12.git
-      - run: ls -alh
+      - run: cd git_12
+      - run: rm y.html
+      - run: git add .
+      - run: git commit -m "deleted"
+      - run: git push origin master
          
     
