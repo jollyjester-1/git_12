@@ -1,3 +1,13 @@
+#!/bin/bash
+
+# Specify the file name and location
+file_name="git_12/hi.txt"
+
+# Create the directory if it doesn't exist
+mkdir -p "$(dirname "$file_name")"
+
+# Write the YAML content to the file
+cat <<EOF >"$file_name"
 name: CI
 
 on:
@@ -22,3 +32,6 @@ jobs:
           echo "Hello, world!"
           # You can also reference a shell script file using "./path/to/script.sh"
 
+EOF
+
+echo "File created successfully at: $file_name"
