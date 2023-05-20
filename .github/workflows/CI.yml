@@ -1,0 +1,24 @@
+name: CI
+
+on:
+  pull_request:
+    branches:
+      - main
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Run shell script
+        run: |
+          # Add your shell script commands here
+          echo "Hello, world!"
+          # You can also reference a shell script file using "./path/to/script.sh"
+
