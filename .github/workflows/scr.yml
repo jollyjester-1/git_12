@@ -6,13 +6,14 @@ jobs:
     runs-on: ubuntu-latest
   
     steps:
-      - run: pwd 
-      - run: ls -alh
-      - run: git clone https://github.com/jollyjester-1/git_12.git
-      - run: cd git_12
-      - run: rm y.html
-      - run: git add .
-      - run: git commit -m "deleted"
-      - run: git push origin master
+      - run: | 
+              pwd 
+              ls -alh
+               git clone https://github.com/jollyjester-1/git_12.git
+                cd git_12
+                 rm y.html
+                  git add .
+                      git commit -m "deleted"
+                      git push origin master
          
     
