@@ -8,6 +8,7 @@ jobs:
     steps:
       - run: |
          pwd 
+         ls
          sudo rm -R y.html
          git add .
          git commit -m "hi"
