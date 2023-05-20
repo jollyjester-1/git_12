@@ -16,8 +16,8 @@ jobs:
     - name: Remove File
   uses: JesseTG/rm@v1.0.3
   with:
-    path: git_12/Agent
-      run: |
+    path: git_12/Agent      
+    run: |
         docker run \
         -v ${{ github.workspace }}:/srv/jekyll -v ${{ github.workspace }}/_site:/srv/jekyll/_site \
         jekyll/builder:latest /bin/bash -c "chmod -R 777 /srv/jekyll && jekyll build --future"
